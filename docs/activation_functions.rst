@@ -41,11 +41,13 @@ A recent invention which stands for Rectified Linear Units. The formula is decep
 
 .. rubric:: Pros
 
-- Pro 1
+- Faster convergence of stochastic gradient descent v.s. sigmoid/tanh
+- Simpler operation compared to sigmoid/tanh activations
+- Typically used as hidden layer activation function in neural networks
 
 .. rubric:: Cons
 
-- Con 1
+- Can result in dead neurons (neurons that never activate across entire training set) if improper learning rate is used
 
 .. rubric:: Further reading
 
@@ -82,11 +84,12 @@ LeakyRelu is a variant of ReLU. Instead of being 0 when :math:`z < 0`, a leaky R
 
 .. rubric:: Pros
 
-- Pro 1
+- Similar benefits to RELU function
+- Attempts to fix dying RELU problem by having a small negative slope when x < 0
 
 .. rubric:: Cons
 
-- Con 1
+- Results not always consistent in helping non-firing neurons
 
 .. rubric:: Further reading
 
@@ -118,11 +121,12 @@ Sigmoid takes a real value as input and outputs another value between 0 and 1. I
 
 .. rubric:: Pros
 
-- Pro 1
+- Typically used as final activation function of network for binary classification
 
 .. rubric:: Cons
 
-- Con 1
+- Saturates and kills gradients
+- Outputs from function are not zero-centered
 
 .. rubric:: Further reading
 
@@ -155,11 +159,12 @@ Therefore, in practice the tanh non-linearity is always preferred to the sigmoid
 
 .. rubric:: Pros
 
-- Pro 1
+- Typically used in Recurrent Neural Networks
+- Zero-centered output from activation
 
 .. rubric:: Cons
 
-- Con 1
+- More computationally expensive operation compared to RELU
 
 
 Softmax
